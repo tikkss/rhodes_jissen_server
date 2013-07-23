@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @xml_sample.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @xml_sample.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_xml_sample_path(@xml_sample) %> |
+<%= link_to 'Back', xml_samples_path %>

@@ -1,4 +1,7 @@
 Demo2Server::Application.routes.draw do
+  resources :xml_samples
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

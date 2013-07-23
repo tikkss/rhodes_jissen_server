@@ -1,0 +1,25 @@
+<h1>Listing xml_samples</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @xml_samples.each do |xml_sample| %>
+  <tr>
+    <td><%= xml_sample.title %></td>
+    <td><%= xml_sample.content %></td>
+    <td><%= link_to 'Show', xml_sample %></td>
+    <td><%= link_to 'Edit', edit_xml_sample_path(xml_sample) %></td>
+    <td><%= link_to 'Destroy', xml_sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Xml sample', new_xml_sample_path %>
