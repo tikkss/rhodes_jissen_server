@@ -1,4 +1,7 @@
 Demo2Server::Application.routes.draw do
+  resources :json_samples
+
+
   resources :xml_samples
 
 

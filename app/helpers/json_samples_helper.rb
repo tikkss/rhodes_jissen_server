@@ -1,0 +1,2 @@
+module JsonSamplesHelper
+end

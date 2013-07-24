@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @json_sample.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @json_sample.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_json_sample_path(@json_sample) %> |
+<%= link_to 'Back', json_samples_path %>
