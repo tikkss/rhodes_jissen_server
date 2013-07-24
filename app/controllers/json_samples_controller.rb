@@ -1,3 +1,5 @@
+require 'fileutils'
+
 class JsonSamplesController < ApplicationController
   # GET /json_samples
   # GET /json_samples.json
@@ -94,6 +96,24 @@ class JsonSamplesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to json_samples_url }
       format.json { render json: {msg: "complete", status: "OK"} }
+    end
+  end
+  
+  def upload
+    @json_sample = JsonSample.find(params[:id])
+    respond_to do |format|
+      format.json do
+        begin
+          upload_dir_path = File.join(Rails.root, "files", "json_samples", @json_sample.id.to_s)
+          FileUtils.mkdir_p(upload_dir_path)
+          File.open(File.join(upload_dir_path, "image.png"), "wb") do |f|
+            f.write params[:file_path].read
+          end
+          return render json: {status: "OK", msg: "complete"}
+        rescue
+          return render json: {status: "NG", msg: "failed"}
+        end
+      end
     end
   end
 end
